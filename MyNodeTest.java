@@ -1,18 +1,20 @@
-package com.bridgelab.linkedlist;
+package com.bridgelab.linkedlistuc2;
 
 public class MyNodeTest {
 
 	public static void main(String[] args) {
-		givenNumbersWhenLinkedListPassedLinkedListTest();
-	}
-	public static  void givenNumbersWhenLinkedListPassedLinkedListTest() {
 
-		MyNode<Integer> firstNumberNode = new MyNode<>(56);
-		MyNode<Integer> secondNumberNode = new MyNode<>(30);
-		MyNode<Integer> thirdNumberNode = new MyNode<>(70);
-		firstNumberNode.SetNext(secondNumberNode);
-		secondNumberNode.SetNext(thirdNumberNode);
-		boolean result = firstNumberNode.getNext().equals(secondNumberNode) && secondNumberNode.getNext().equals(thirdNumberNode);
+		Node<Integer> firstNumberNode = new Node<Integer>(70);
+		Node<Integer> secondNumberNode = new Node<Integer>(30);
+		Node<Integer> thirdNumberNode = new Node<Integer>(56);
+		MyNode myNode = new MyNode();
+		myNode.add(firstNumberNode);
+		myNode.add(secondNumberNode);
+		myNode.add(thirdNumberNode);
+		myNode.printNodes();
+
+		boolean result = myNode.head.equals(thirdNumberNode) && myNode.head.getNext().equals(secondNumberNode)
+				&& myNode.tail.equals(firstNumberNode);
 		System.out.println(result);
 	}
 }

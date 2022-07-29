@@ -1,29 +1,37 @@
-package com.bridgelab.linkedlist;
+package com.bridgelab.linkedlistuc2;
 
 public class MyNode<K> {
-	private K key;
-	MyNode next;
-
-	public MyNode(K key) {
-		this.key = key;
-		this.next = null;
-	}
-
-	public K getKey() {
-		return key;
-	}
-
-	public void setKey(K key){
-		this.key = key;
-	}
-
-	public MyNode getNext(){
-		return next;
-	}
-
-	public void SetNext(MyNode next) {
-		this.next = next;
-	}
-
+	public INode head;
+	public INode tail;
 	
+	public MyNode() {
+		this.head = null;
+		this.tail = null;
+	}
+
+	public void add(INode newNode) {
+	
+		if(this.head == null)
+			this.head = newNode;
+	    if (this.tail == null)
+			this.tail = newNode;
+		else {
+			INode temp = this.head; 
+			this.head= newNode;
+			head.setNext(temp);
+		}	
+	}
+	
+	public void  printNodes() {
+		StringBuffer myNodes = new StringBuffer("My Nodes :");
+		INode temp = head;
+		while(temp.getNext() != null) {
+			myNodes.append(temp.getKey());
+			if(!temp.equals(tail))myNodes.append("->");
+				temp = temp.getNext();	
+		}
+		myNodes.append(temp.getKey());
+		System.out.println(myNodes);
+	}
+
 }
