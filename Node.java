@@ -1,28 +1,32 @@
-package com.bridgelab.linkedlistuc10;
+package com.bridgelab.linkedlistuc4;
 
-public class Node implements INode {
-	  private int key;
-		private INode next;
+public class Node<K> implements INode<K> {
+	private K key;
+	private Node next;
+	
+	public Node(K key) {
+		this.key = key;
+		this.next = null; 
+	}
 
-		public Node(int key) {
-			this.key = key;
-			this.next = null;
-		}
+	public K getKey() {
+		return key;
+	}
 
-		public int getKey() {
-			return key;
-		}
+	
+	public void setKey(K key) {
+		this.key = key;
+	}
 
-		public void setKey(int key) {
-			this.key = key;
-		}
 
-		public INode getNext() {
-			return next;
-		}
+	public INode<K> getNext() {
+		return next;
+	}
 
-		public void setNext(INode next) {
-			this.next = (Node) next;
-		}
+	
+	public void setNext(INode next) {
+		this.next = (Node<K>) next;
+		
+	}	
 
 }

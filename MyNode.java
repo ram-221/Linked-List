@@ -1,36 +1,56 @@
-package com.bridgelab.linkedlistuc10;
-import com.bridgelab.linkedlistuc10.Node;
+package com.bridgelab.linkedlistuc4;
 
-public class MyNode {
+public class MyNode<K> {
+	public INode head;
+	public INode tail;
 
-	private INode head;
-
-	MyNode() {
-		head = null;
+	public MyNode() {
+		this.head = null;
+		this.tail = null;
 	}
 
-	public void insert(int data) {
-		INode newNode = new Node(data);
-		INode current = head;
-		INode previous = null;
-		while (current != null && data > current.getKey()) {
-			previous = current;
-			current = current.getNext();
+	public void add(INode newNode) {
+
+		if (this.tail == null)
+			this.tail = newNode;
+		if (this.head == null)
+			this.head = newNode;
+		else {
+			INode temp = this.head;
+			this.head = newNode;
+			head.setNext(temp);
 		}
-		if (previous == null) {
-			head = newNode;
+	}
+
+	public void append(INode myNode) {
+		if (this.tail == null)
+			this.tail = myNode;
+		if (this.head == null) {
+			this.head = myNode;
 		} else {
-			previous.setNext(newNode);
-			;
+			INode temp = this.head;
+			this.tail.setNext(myNode);
+			this.tail = myNode;
 		}
-		newNode.setNext(current);
 	}
 
-	public void displayList() {
-		INode current = head;
-		while (current != null) {
-			System.out.print(current.getKey() + " ");
-			current = current.getNext();
-		}
+	public void insert(INode myNode, INode myNewNode) {
+		INode temp = myNode.getNext();
+		myNode.setNext(myNewNode);
+		myNewNode.setNext(temp);
 	}
+
+	public void printNodes() {
+		StringBuffer myNodes = new StringBuffer("My Nodes :");
+		INode temp = head;
+		while (temp.getNext() != null) {
+			myNodes.append(temp.getKey());
+			if (!temp.equals(tail))
+				myNodes.append("->");
+			temp = temp.getNext();
+		}
+		myNodes.append(temp.getKey());
+		System.out.println(myNodes);
+	}
+
 }

@@ -1,10 +1,10 @@
-package com.bridgelab.linkedlistuc10;
+package com.bridgelab.linkedlistuc4;
 
-public interface INode {
-
-	int getKey();
-	void setKey(int key);
+public interface INode<K> {
+	K getKey();
+	void setKey(K key);
 	
 	INode getNext();
 	void setNext(INode next);
+
 }
