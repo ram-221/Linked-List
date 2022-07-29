@@ -1,4 +1,4 @@
-package com.bridgelab.linkedlistuc2;
+package com.bridgelab.linkedlistuc3;
 
 public interface INode<K> {
 	K getKey();

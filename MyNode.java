@@ -1,25 +1,37 @@
-package com.bridgelab.linkedlistuc2;
+package com.bridgelab.linkedlistuc3;
 
 public class MyNode<K> {
 	public INode head;
 	public INode tail;
 	
 	public MyNode() {
-		this.head = null;
-		this.tail = null;
+	    this.head = null;
+	    this.tail = null;
 	}
 
 	public void add(INode newNode) {
-	
-		if(this.head == null)
-			this.head = newNode;
-	    if (this.tail == null)
-			this.tail = newNode;
-		else {
-			INode temp = this.head; 
-			this.head= newNode;
-			head.setNext(temp);
+		if(this.tail == null)
+		this.tail = newNode;
+	       if (this.head == null)
+		   this.head = newNode;
+	       else {
+		   INode temp = this.head; 
+		   this.head= newNode;
+		  head.setNext(temp);
 		}	
+	}
+	
+	public void append(INode myNode) {
+		if (this.tail == null)
+			this.tail = myNode;
+		if (this.head == null) {
+			this.head = myNode;
+		}
+		else {
+			INode temp = this.head;
+			this.tail.setNext(myNode);
+			this.tail = myNode;
+		}
 	}
 	
 	public void  printNodes() {
