@@ -1,4 +1,4 @@
-package com.bridgelab.linkedlistuc5;
+package com.bridgelab.linkedlistuc6;
 
 public class Node<K> implements INode<K> {
 	private K key;

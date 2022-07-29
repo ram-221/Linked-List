@@ -1,14 +1,12 @@
-package com.bridgelab.linkedlistuc5;
+package com.bridgelab.linkedlistuc6;
 
 public class MyNodeTest {
 
-	private static final boolean isExist = false;
-
 	public static void main(String[] args) {
-		given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult();
+		given3NumbersWhenDeletingLastElementInBetweenLinkedList();
 	}
 
-	public static void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult() {
+	public static void given3NumbersWhenDeletingLastElementInBetweenLinkedList() {
 		Node<Integer> firstNumberNode = new Node<Integer>(56);
 		Node<Integer> secondNumberNode = new Node<Integer>(30);
 		Node<Integer> thirdNumberNode = new Node<Integer>(70);
@@ -19,12 +17,10 @@ public class MyNodeTest {
 		myNode.printNodes();
 		boolean result = myNode.head.equals(firstNumberNode) && myNode.head.getNext().equals(secondNumberNode)
 				&& myNode.tail.equals(thirdNumberNode);
-		myNode.pop();
+		myNode.popLastNode();
 		System.out.println("Linked List after deleting first element");
 		myNode.printNodes();
 		System.out.println(result);
-		
-		
 	}
 
 }
