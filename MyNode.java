@@ -1,5 +1,5 @@
-package com.bridgelab.linkedlistuc6;
-
+package com.bridgelab.linkedlistuc7;
+import java.util.Scanner;
 public class MyNode<K> {
 	public INode head;
 	public INode tail;
@@ -55,6 +55,17 @@ public class MyNode<K> {
 		head.getNext().setNext(null);
 		return temp;
 	}
+	
+	public INode searchNode() {
+		System.out.println("enter the key to search node");
+		Scanner scanner = new Scanner(System.in);
+		int searchValue  = scanner.nextInt();
+		INode temp = head;
+		while(!temp.getKey().equals(searchValue) ) {
+			temp = temp.getNext();
+		}
+		return temp;
+	} 
 
 	public void printNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes :");
