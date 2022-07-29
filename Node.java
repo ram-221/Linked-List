@@ -1,4 +1,4 @@
-package com.bridgelab.linkedlistuc7;
+package com.bridgelab.linkedlistuc9;
 
 public class Node<K> implements INode<K> {
 	private K key;
@@ -25,5 +25,4 @@ public class Node<K> implements INode<K> {
 		this.next = (Node<K>) next;
 
 	}
-
 }
